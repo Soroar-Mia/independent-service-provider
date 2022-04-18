@@ -1,13 +1,18 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Button, Form } from 'react-bootstrap';
-import { Link, useNavigate } from 'react-router-dom';
-import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import {  useAuthState, useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 
 const Login = () => {
     const emailRef = useRef('');
     const passwordRef = useRef('');
     const navigate = useNavigate();
+    let location = useLocation();
+    let from = location.state?.from?.pathname || "/";
+    const [userAuth, loadingAuth, errorAuth] = useAuthState(auth);
+    const [signInWithGoogle] = useSignInWithGoogle(auth);
+
 
     const [
         signInWithEmailAndPassword,
@@ -16,8 +21,18 @@ const Login = () => {
         error,
     ] = useSignInWithEmailAndPassword(auth);
 
+    useEffect(() => {
+        if (user || userAuth) {
+            navigate(from, { replace: true });
+        }
+    }, [user, userAuth])
+
+    if (loadingAuth) {
+        return <h4>Loading...</h4>
+    }
+
     if (user) {
-        navigate('/home');
+        navigate('/');
     }
 
     const handleSubmit = event => {
@@ -56,6 +71,7 @@ const Login = () => {
                 </Button>
             </Form>
             <p>New to Private Tutor <Link to="/register" className='text-danger pe-auto text-decoration-none' onClick={navigateRegister}>Please Register</Link> </p>
+            <button onClick={() => signInWithGoogle()} className='btn btn-outline-success'>Sign In With Google</button>
         </div>
     );
 };
