@@ -6,7 +6,7 @@ const ServiceDetail = () => {
     return (
         <div>
             <h2>Welcome to detail: {serviceId}</h2>
-            <h3 className='text-primary text-center mt-5'>Thanks for booking</h3>
+            <h3 className='text-primary text-center mt-5'>Thanks for booking.</h3>
         </div>
     );
 };
