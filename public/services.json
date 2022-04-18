@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "name": "Math",
+        "price": "5000",
+        "description": "I usually focus on the topic areas which the students find more difficult. Each student learns differently and I adapt my style as needed in order to tailor the sessions to suit individual needs",
+        "img": "https://i.ibb.co/jh03XbM/math.png"
+    },
+    {
+        "id": 2,
+        "name": "Accounting",
+        "price": "7000",
+        "description": "Well my teaching style can vary depending on the personality of the student.  Well I can play guitar too and can teach...",
+        "img": "https://i.ibb.co/Sw8yNtX/accounting1.jpg"
+    },
+    {
+        "id": 3,
+        "name": "English",
+        "price": "10000",
+        "description": "Hello, dear students; I am Munsur Hallas. I am an English teacher, and I have got three years of experience in teaching English. I am here to help you for improving your English with confidence and freedom. It is an excellent platform for learning; you can only judge after receiving and attending my classes. I teach effectively and with full. I review materials assigned by the school and help students to complete homework, solve worksheets, and practice tests to prepare students for weekly...",
+        "img": "https://i.ibb.co/bNMZbB9/english2.gif"
+    }
+]

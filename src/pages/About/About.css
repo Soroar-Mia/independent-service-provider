@@ -1,0 +1,19 @@
+.about-container{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 5px;
+}
+.aaa{
+    margin: 40px;
+    padding: 30px;
+}
+.bbb{
+    margin-top: 150px;
+}
+
+
+@media only screen and (max-width:576px) {
+    .about-container{
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
